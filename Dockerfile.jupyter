@@ -1,0 +1,4 @@
+FROM jupyter-server:latest
+USER root
+RUN pip install --no-cache-dir hdfs
+USER jupyteruser
