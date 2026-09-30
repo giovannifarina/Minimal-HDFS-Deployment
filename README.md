@@ -20,7 +20,7 @@ docker compose up -d
 ```
 
 ### Arresto dei container mantenendo i dati su HDFS
-Fersma i container mantenendone lo stato. Alla successiva esecuzione di `docker compose start` o `docker compose up -d`, i file salvati su HDFS saranno ancora presenti:
+Ferma i container mantenendone lo stato. Alla successiva esecuzione di `docker compose start` o `docker compose up -d`, i file salvati su HDFS saranno ancora presenti:
 ```bash
 docker compose stop
 ```
@@ -39,3 +39,7 @@ All'interno di `./notebooks/` è presente il notebook [`hdfs_interaction.ipynb`]
 2. Caricamento del dataset locale (`/app/datasets/Solar_Energy_Production.csv`) su HDFS in `/datasets/Solar_Energy_Production.csv`.
 3. Verifica della presenza del file su HDFS e visualizzazione dei relativi metadati.
 4. Download del dataset da HDFS salvandolo con un nome diverso (`/app/notebooks/Solar_Energy_Production_renamed.csv`).
+5. **Verifica della dimensione del blocco HDFS** (predefinita a 128 MB).
+6. **Generazione di file superiori alla dimensione del blocco** e ispezione dettagliata della suddivisione in più blocchi.
+7. **Mappatura dei DataNode per ciascun blocco** e dimostrazione pratica di **Fault Tolerance (tolleranza ai guasti)** con un DataNode offline.
+8. **Verifica della ri-replicazione automatica** sui nodi superstiti dopo il timeout rapido (10s).
