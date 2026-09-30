@@ -24,6 +24,8 @@ services:
         context: .
         dockerfile: Dockerfile.jupyter
       hostname: jupyter
+      working_dir: /app
+      command: start-notebook.py --IdentityProvider.token='' --ServerApp.password=''
       ports:
         - "8888:8888"
       volumes:
@@ -33,3 +35,4 @@ services:
         - JUPYTER_ENABLE_LAB=yes
       depends_on:
         - namenode
+
