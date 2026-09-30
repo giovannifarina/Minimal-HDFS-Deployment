@@ -1,4 +1,5 @@
-FROM jupyter-server:latest
+FROM jupyter/minimal-notebook:latest
 USER root
 RUN pip install --no-cache-dir hdfs
-USER jupyteruser
+USER ${NB_UID}
+
