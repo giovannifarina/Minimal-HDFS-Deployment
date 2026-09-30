@@ -1,3 +1,6 @@
 CORE-SITE.XML_fs.defaultFS=hdfs://namenode:8020
 HDFS-SITE.XML_dfs.namenode.rpc-address=namenode:8020
 HDFS-SITE.XML_dfs.replication=2
+HDFS-SITE.XML_dfs.heartbeat.interval=1
+HDFS-SITE.XML_dfs.namenode.heartbeat.recheck-interval=0
+HDFS-SITE.XML_dfs.namenode.redundancy.interval.seconds=3
